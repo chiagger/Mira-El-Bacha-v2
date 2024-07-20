@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         }}
       >
         <Button variant="ghost" className="fake-menu">
-            <img src={FakeIcon}></img>
+          <img src={FakeIcon}></img>
         </Button>
         <div>
           <h1 style={{ fontSize: !isMobile ? "2em" : "" }}>Mira El Bacha</h1>
@@ -34,7 +34,11 @@ const Header: React.FC = () => {
         </div>
         <Sheet>
           <SheetTrigger>
-            <Button variant="ghost" className="menu-button">
+            <Button
+              variant="ghost"
+              className="menu-button"
+              style={{ marginRight: "2vw" }}
+            >
               <img src={MenuIcon}></img>
             </Button>
           </SheetTrigger>
