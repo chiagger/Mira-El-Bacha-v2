@@ -1,7 +1,6 @@
-import { useMobile } from "@/contexts/MobileContext";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "../style/Header.css";
+import "../style/MainContent.css";
 import Header from "./Header";
 
 const CV: React.FC = () => {
@@ -10,7 +9,9 @@ const CV: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="container">ok CV</div>
+      <div className="container">
+       
+      </div>
     </>
   );
 };
