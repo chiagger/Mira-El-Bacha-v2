@@ -29,8 +29,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useMobile } from "@/contexts/MobileContext";
 
 const MainContent: React.FC = () => {
+  const isMobile = useMobile();
+
   const PVCImages = [PVC1, PVC2, PVC3, PVC4];
   const [currentPVC, setCurrentPVC] = React.useState(0);
 
@@ -91,6 +94,7 @@ const MainContent: React.FC = () => {
       className="main-content"
       style={{
         display: "flex",
+        flexDirection: `${!isMobile ? "row" : "column-reverse"}`,
         justifyContent: "center",
         alignItems: "center",
         gap: "1rem",
@@ -99,8 +103,8 @@ const MainContent: React.FC = () => {
       <ScrollArea
         className="rounded-md border p-4"
         style={{
-          width: "50%",
-          height: "85%",
+          width: !isMobile ? "50%" : "100%",
+          height: !isMobile ? "85%" : "65%",
         }}
       >
         <div
@@ -272,7 +276,10 @@ const MainContent: React.FC = () => {
       </ScrollArea>
       <ScrollArea
         className="rounded-md border p-4"
-        style={{ width: "40%", height: "85%" }}
+        style={{
+          width: !isMobile ? "40%" : "100%",
+          height: !isMobile ? "85%" : "35%",
+        }}
       >
         <Card style={{ textAlign: "left", fontSize: "0.9em" }}>
           <CardHeader style={{ textAlign: "center" }}>
