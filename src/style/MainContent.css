@@ -2,6 +2,7 @@
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
+  height: calc(100vh - 108.97px);
 }
 
 .portfolio {
