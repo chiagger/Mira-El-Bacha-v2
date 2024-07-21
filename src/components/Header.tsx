@@ -62,7 +62,9 @@ const Header: React.FC = () => {
                 }}
               >
                 <Button
-                  variant="secondary"
+                  variant={`${
+                    location.pathname === "/" ? "secondary" : "outline"
+                  }`}
                   style={{ width: "100%" }}
                   onClick={() => {
                     navigate("/");
@@ -71,7 +73,9 @@ const Header: React.FC = () => {
                   Home
                 </Button>
                 <Button
-                  variant="outline"
+                  variant={`${
+                    location.pathname === "/CV" ? "secondary" : "outline"
+                  }`}
                   style={{ width: "100%" }}
                   onClick={() => {
                     navigate("/CV");
@@ -80,7 +84,9 @@ const Header: React.FC = () => {
                   CV
                 </Button>
                 <Button
-                  variant="outline"
+                  variant={`${
+                    location.pathname === "/contacts" ? "secondary" : "outline"
+                  }`}
                   style={{ width: "100%" }}
                   onClick={() => {
                     navigate("/contacts");
