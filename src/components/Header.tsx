@@ -1,20 +1,20 @@
-import React from "react";
-import "../style/Header.css";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import MenuIcon from "../assets/menuicon.svg";
-import FakeIcon from "../assets/fakeicon.svg";
 import { useMobile } from "@/contexts/MobileContext";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import FakeIcon from "../assets/fakeicon.svg";
+import MenuIcon from "../assets/menuicon.svg";
+import "../style/Header.css";
 
 const Header: React.FC = () => {
   const isMobile = useMobile();
+  const navigate = useNavigate();
   return (
     <header className="header">
       <div
@@ -43,12 +43,52 @@ const Header: React.FC = () => {
             </Button>
           </SheetTrigger>
           <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
+            <SheetHeader
+              style={{
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: "100%",
+                  gap: "0.6rem",
+                }}
+              >
+                <Button
+                  variant="secondary"
+                  style={{ width: "100%" }}
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                >
+                  Home
+                </Button>
+                <Button
+                  variant="outline"
+                  style={{ width: "100%" }}
+                  onClick={() => {
+                    navigate("/CV");
+                  }}
+                >
+                  CV
+                </Button>
+                <Button
+                  variant="outline"
+                  style={{ width: "100%" }}
+                  onClick={() => {
+                    navigate("/contacts");
+                  }}
+                >
+                  Contacts
+                </Button>
+              </div>
             </SheetHeader>
           </SheetContent>
         </Sheet>
