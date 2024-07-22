@@ -28,7 +28,7 @@ const Header: React.FC = () => {
         <Button variant="ghost" className="fake-menu">
           <img src={FakeIcon}></img>
         </Button>
-        <div>
+        <div style={{ marginLeft: "25px" }}>
           <h1 style={{ fontSize: !isMobile ? "2em" : "" }}>Mira El Bacha</h1>
           <h2>1st Assistant Director</h2>
         </div>
